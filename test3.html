@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .taichi {
+            width: 500px;
+            height: 500px;
+            border-radius: 400px;
+            /* background: #000; */
+            background-image: linear-gradient(90deg, #fff 50%, #000 50%);
+            box-shadow: 1.5px 1.5px 10px 10px rgb(82, 80, 80);
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .taichi::before {
+            content: "";
+            width: 250px;
+            height: 250px;
+            background: #fff;
+            border-radius: 200px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        .taichi::after {
+            content: "";
+            width: 250px;
+            height: 250px;
+            background: #000;
+            border-radius: 200px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        .yinyang::before {
+            content: "";
+            width: 60px;
+            height: 60px;
+            background: #000;
+            border-radius: 100px;
+            position: absolute;
+            z-index: 1;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        .yinyang::after {
+            content: "";
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            border-radius: 100px;
+            position: absolute;
+            z-index: 1;
+            bottom: 20%;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .rotate {
+            animation: rotate;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="taichi rotate">
+        <div class="yinyang"></div>
+    </div>
+</body>
+
+</html>
